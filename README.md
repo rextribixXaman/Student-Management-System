@@ -14,6 +14,9 @@ A Java desktop application for managing student records using Java Swing, JDBC, 
 - Persistent storage using MySQL
 - Graphical interface built with Java Swing
 
+## Application Screenshot
+![Student Management System Dashboard](screenshots/student-dashboard.png)
+
 ## Tech Stack
 
 - **Language:** Java
