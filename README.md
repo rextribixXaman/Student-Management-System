@@ -1,71 +1,85 @@
+
 # Student Management System
 
-A console-based Student Management System developed in Java.
+A Java desktop application for managing student records using Java Swing, JDBC, and MySQL.
 
 ## Features
 
-* Add a new student
-* Prevent duplicate Student IDs
-* View all students
-* Search student by ID
-* Delete student by ID
-* Validate student age
-* Validate marks between 0 and 100
-* Menu-driven console interface
+- Add new student records
+- View all students in a graphical table
+- Search students by ID
+- Update student details
+- Delete student records with confirmation
+- Input validation for student data
+- Persistent storage using MySQL
+- Graphical interface built with Java Swing
 
-## Technologies Used
+## Tech Stack
 
-* Java
-* ArrayList
-* Scanner
-* Iterator
-* Object-Oriented Programming
-
-## Java Concepts Used
-
-* Classes and Objects
-* Constructors
-* Encapsulation
-* Getters
-* Methods
-* Loops
-* Switch-case
-* ArrayList
-* Iterator
-* Input Validation
+- **Language:** Java
+- **GUI:** Java Swing
+- **Database:** MySQL
+- **Database Connectivity:** JDBC
+- **IDE:** IntelliJ IDEA
+- **Version Control:** Git and GitHub
 
 ## Project Structure
 
 ```text
-StudentManagementSystem
-│
-├── Main.java
-├── Student.java
+Student-Management-System/
+├── src/
+│   ├── Main.java
+│   ├── Student.java
+│   ├── StudentDAO.java
+│   ├── DBConnection.java
+│   └── StudentDAOTest.java
+├── .gitignore
 └── README.md
 ```
 
-## How to Run
+## Database Setup
 
-1. Open the project in IntelliJ IDEA.
-2. Run `Main.java`.
-3. Select an option from the menu.
-4. Follow the instructions shown in the console.
+1. Install MySQL Server and start the service.
+2. Create the database and table:
 
-## Menu
+```sql
+CREATE DATABASE student_management;
+USE student_management;
 
-```text
-===== Student Management System =====
-1. Add Student
-2. View All Students
-3. Search Student
-4. Delete Student
-5. Exit
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    course VARCHAR(100) NOT NULL,
+    marks DOUBLE NOT NULL
+);
 ```
+
+3. Add MySQL Connector/J to the project dependencies.
+4. Configure your database URL, username, and password in `DBConnection.java`.
+5. Run `Main.java` to launch the application.
+
+**Security:** Never commit real database passwords or other secrets to GitHub.
+
+## How to Use
+
+1. Launch the application.
+2. Enter the student details in the form.
+3. Use Add, Update, Delete, Search, and Refresh to manage records.
+4. Select a row to load the student's details into the form.
+
+## Concepts Demonstrated
+
+- Object-Oriented Programming
+- CRUD operations
+- JDBC and prepared statements
+- SQL database integration
+- Java Swing event handling
+- Input validation
+- Git version control
 
 ## Future Improvements
 
-* Update student details
-* Store student data in a database
-* Add a graphical user interface
-* Add login/authentication
-* Connect the project with Spring Boot
+- Automated unit and integration tests
+- Improved database configuration
+- Migration to a Spring Boot REST API
