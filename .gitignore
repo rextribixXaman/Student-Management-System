@@ -28,3 +28,17 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Local configuration and secrets ###
+.env
+.env.*
+!.env.example
+
+# Local database configuration
+application-local.properties
+
+# Build output
+target/
+
+# Logs
+*.log
